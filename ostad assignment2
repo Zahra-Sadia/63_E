@@ -1,0 +1,142 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPCnoc0b8I0rm65zsJuSAfZ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Zahra-Sadia/63_E/blob/main/ostad%20assignment2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XQLkYwDP9ZC3",
+        "outputId": "18d302e4-af8f-459e-ac00-9a708effe875"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter numbers separated by spaces: 123456\n",
+            "Original List: [123456]\n",
+            "Unique Values: [123456]\n",
+            "Count: 1\n"
+          ]
+        }
+      ],
+      "source": [
+        "#1\n",
+        "def process_numbers(numbers):\n",
+        "    unique_values = list(dict.fromkeys(numbers))\n",
+        "    result = {\n",
+        "        \"original_list\": numbers,\n",
+        "        \"unique_values\": unique_values,\n",
+        "        \"count\": len(unique_values)\n",
+        "    }\n",
+        "    return result\n",
+        "numbers = list(map(int, input(\"Enter numbers separated by spaces: \").split()))\n",
+        "result = process_numbers(numbers)\n",
+        "print(\"Original List:\", result[\"original_list\"])\n",
+        "print(\"Unique Values:\", result[\"unique_values\"])\n",
+        "print(\"Count:\", result[\"count\"])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#2\n",
+        "def set_operations(set1=set(), set2=set()):\n",
+        "    union_result = set1.union(set2)\n",
+        "    intersection_result = set1.intersection(set2)\n",
+        "    difference_result = set1.difference(set2)\n",
+        "    return union_result, intersection_result, difference_result\n",
+        "set_a = {1, 2, 3, 4}\n",
+        "set_b = {3, 4, 5, 6}\n",
+        "union, intersection, difference = set_operations(\n",
+        "    set1=set_a,\n",
+        "    set2=set_b\n",
+        ")\n",
+        "print(\"Union:\", union)\n",
+        "print(\"Intersection:\", intersection)\n",
+        "print(\"Difference:\", difference)"
+      ],
+      "metadata": {
+        "id": "sO4yMzkx-BJU"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#3\n",
+        "my_tuple = (10, \"Python\", 3.5, True)\n",
+        "number, language, decimal, status = my_tuple\n",
+        "print(\"Number:\", number)\n",
+        "print(\"Language:\", language)\n",
+        "print(\"Decimal:\", decimal)\n",
+        "print(\"Status:\", status)\n",
+        "another_tuple = (20, \"Java\", 4.5, False)\n",
+        "print(\"my_tuple == another_tuple:\", my_tuple == another_tuple)\n",
+        "print(\"my_tuple != another_tuple:\", my_tuple != another_tuple)\n",
+        "print(\"my_tuple < another_tuple:\", my_tuple < another_tuple)\n",
+        "print(\"my_tuple > another_tuple:\", my_tuple > another_tuple)\n",
+        "my_list = [10, 20, 30]\n",
+        "my_list[0] = 100\n",
+        "my_tuple2 = (10, 20, 30)\n",
+        "print(\"List:\", my_list)\n",
+        "print(\"Tuple:\", my_tuple2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UzF-KZ_B-n3U",
+        "outputId": "40e6ea51-9ede-4021-f32f-a64b9746a3ff"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Number: 10\n",
+            "Language: Python\n",
+            "Decimal: 3.5\n",
+            "Status: True\n",
+            "my_tuple == another_tuple: False\n",
+            "my_tuple != another_tuple: True\n",
+            "my_tuple < another_tuple: True\n",
+            "my_tuple > another_tuple: False\n",
+            "List: [100, 20, 30]\n",
+            "Tuple: (10, 20, 30)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
